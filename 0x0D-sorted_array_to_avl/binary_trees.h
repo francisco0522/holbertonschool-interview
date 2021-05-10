@@ -1,11 +1,8 @@
-#ifndef AVL_H
-#define AVL_H
+#ifndef BINARY_TREES
+#define BINARY_TREES
 
-#include <limits.h>
 #include <stdio.h>
-
-#define MAX(x, y) ((x) > (y) ? (x) : (y))
-#define ABS(x) ((x) > 0 ? (x) : (-(x)))
+#include <stdlib.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -24,8 +21,11 @@ struct binary_tree_s
 };
 
 typedef struct binary_tree_s binary_tree_t;
+typedef struct binary_tree_s avl_t;
 
-int binary_tree_is_avl(const binary_tree_t *tree);
-int is_avl(const binary_tree_t *tree, int min, int max, int *height);
+
+avl_t *sorted_array_to_avl(int *array, size_t size);
+avl_t *nodes_binary(int *array, int p1, int p2, avl_t **header);
+void binary_tree_print(const binary_tree_t *);
 
 #endif
